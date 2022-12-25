@@ -7,6 +7,7 @@
     --brand-color: #404BBF;
 
     --modal-idx: 1000;
+    --anim: 1300ms ease;
 }
 body {
     background-color: var(--primary-white-color);
@@ -86,12 +87,13 @@ img {
  .current::after{
     content: "";
     display: block;
+    position: absolute;
 
     width: 100%;
     height: 4px;
 
     border-radius: 2px;
-    margin-top: 20px;
+    bottom: 0;
     left: 0;
 
     background-color: var(--brand-color);
@@ -109,20 +111,24 @@ img {
 
 
 .header-link-nav-a {
+    position: relative;
     display: block;
     padding-top: 24px;
+    padding-bottom: 24px;
 
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
-    color: var(--second-basic-color);
+    color: var(--second-basic-color);  
+    transition-duration: 250ms;
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+   transition-property: color;
 }
 
 .header-link-nav-a:focus,
 .header-link-nav-a:hover {
    color: var(--accent-color);
-   transition-duration: 250ms;
-   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .header-info {
@@ -141,14 +147,15 @@ img {
     font-size: 16px;
     line-height: 1.5;
     color: var(--first-basic-color);    
-
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color;
 }
 
 .header-info-b:focus,
 .header-info-b:hover {
     color: var(--accent-color);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .hero {
     background-image: linear-gradient(
@@ -193,14 +200,16 @@ img {
     cursor: pointer;
     letter-spacing: 0.04em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: box-shadow, background;
 }
 
 .hero-btn :focus,
 .hero-btn:hover {
     background: var(--brand-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .container-full {
@@ -279,11 +288,17 @@ img {
     line-height: 1.5;
     color: var(--first-basic-color);
 }
+
+.center-b {
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color;
+}
+
 .center-b:hover,
 .center-b:focus {
     background-color: #404BBF;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .visually-hidden {
@@ -424,13 +439,15 @@ img {
     height: 40px;
     background-color: var(--accent-color);
     border-radius: 50%;    
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color;
 }
 
 .team-soc-link:hover,
 .team-soc-link:focus {
     background-color: var(--brand-color);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .team-soc-icon {
@@ -474,13 +491,18 @@ img {
     display: flex;
     padding: 16px 32px;
 
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
+    width: 168px;
+    height: 88px;
     border: 1px solid var(--customer-color);
     border-radius: 4px;
     color: var(--customer-color);
     border-color: var(--customer-color);
     fill: var(--customer-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color, border-color,fill;
 }
 
 .customers-link:hover,
@@ -488,13 +510,14 @@ img {
     color: var(--brand-color);
     border-color: var(--brand-color);
     fill: var(--brand-color);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .customer-icon {
-    width: 41px;
-    height: 47px;
+    /* width: 41px;
+    height: 47px; */
+    width: 104px;
+    height: 88px;
 }
 
 .footer {
@@ -576,13 +599,15 @@ img {
     width: 40px;
     height: 40px;
     padding: 8px;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color;
 }
 
 .soc-media-link:hover,
 .soc-media-link:focus {
     background-color: #31D0AA;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .soc-media-list:not(:last-child) {
@@ -638,6 +663,9 @@ img {
     color: var(--accent-color);
     background-color: #F4F4FD;
     cursor: pointer;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: box-shadow, color, background-color,border;
 }
 
 .portfolio-nav-btn:hover,
@@ -646,8 +674,7 @@ img {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
     border: transparent;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 
@@ -689,6 +716,9 @@ img {
     transform: translateY(100%);
     transition: transform 250ms ease;
     background-color: var(--accent-color);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform;
 }
 .card .overlay-text {
     font-size: 16px;
@@ -717,13 +747,15 @@ img {
 .card-nav {
     display: block;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: box-shadow;
 }
 
 .card-nav:hover, 
 .card-nav:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .card-text {
@@ -761,9 +793,9 @@ img {
     height: 100%; 
 
     background-color: rgba(46, 47, 66, 0.4);
-    transition: opacity(600ms ease), visibility(600ms ease);
+    transition:  opacity var(--anim);
 }
-
+/*visibility var(--anim)  */
 .backdrop.is-hidden {
     visibility: hidden;
     opacity: 0;
@@ -782,9 +814,9 @@ img {
 
     background: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;   
-    transition: opacity(300ms ease) 400ms, transform (300ms ease) 400ms;
-               
+    border-radius: 4px;  
+    /* transition: opacity var(--anim) 300ms 
+       transform var(--anim) 300ms; */
 }
 
 .backdrop.is-hidden.modal {
